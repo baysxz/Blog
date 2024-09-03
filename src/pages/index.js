@@ -29,11 +29,11 @@ const Home = () => {
   };
 
   const handlePrevSlide = () => {
-    setCurrentSlideIndex((prev) => prev - 1);
+    if (currentSlideIndex > 0) setCurrentSlideIndex((prev) => prev - 1);
   };
 
   return (
-    <div className="container max-w-screen-2xl mx-auto">
+    <div className='container max-w-screen-2xl mx-auto'>
       <Header />
       {blogs.map((blog, index) => {
         if (index === currentSlideIndex) {
@@ -47,7 +47,7 @@ const Home = () => {
           );
         }
       })}
-      <div className="flex flex-row justify-end">
+      <div className='flex flex-row justify-end gap-2 px-[350px] pb-[100px]'>
         <div onClick={handlePrevSlide}>
           <Back />
         </div>
@@ -55,11 +55,11 @@ const Home = () => {
           <Forward />
         </div>
       </div>
-      <div className="">
-        <div>
+      <div className=''>
+        <div className='leading-3 text-2xl font-bold'>
           <h3>Trending</h3>
         </div>
-        <div className="flex flex-row gap-6 ">
+        <div className='flex flex-row gap-6 justify-center '>
           {blogs.map((blog, index) => {
             if (index < 4) {
               return (
