@@ -14,8 +14,8 @@ export const Page = () => {
   if (error) {
     return <p>...oh sorry error</p>;
   }
-  const first = data[0];
-  const second = data;
+  // const first = data[0];
+  // const second = data;
 
   return (
     <div className="max-w-[1000px] grid grid-cols-3 mx-auto">
