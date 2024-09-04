@@ -3,7 +3,7 @@ import { Search } from "@/Icons/Search";
 
 export const Header = () => {
   return (
-    <div className="flex flex-row justify-between py-8 px-80">
+    <div className="flex flex-row justify-between py-8">
       <div>
         <Logo className="w-[158] h-[36]" />
       </div>
