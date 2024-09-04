@@ -62,22 +62,12 @@ const Home = () => {
           <h3 className="flex ">Trending</h3>
         </div>
         <div className="flex flex-row gap-6 justify-center ">
-          {blogs.map((blog, index) => {
-            if (index < 4) {
-              return (
-                <TrendPosts
-                  coverImage={blog.cover_image}
-                  blogTags={blog.tag_list[0]}
-                  title={blog.title}
-                />
-              );
-            }
-          })}
+          <TrendPosts />
         </div>
       </div>
       <div className="flex flex-col font-bold text-2xl leading-8 gap-8 pb-8">
         <h3>All Blog Post</h3>
-        <div className="flex flex-row justify-between">
+        {/* <div className="flex flex-row justify-between">
           <ul className="flex flex-row gap-5 text-xs leading-6 font-semibold">
             <li className="text-yellow-500">All</li>
             <li>Design</li>
@@ -87,11 +77,10 @@ const Home = () => {
             <li>Branding</li>
           </ul>
           <p className="text-xs leading-6 font-semibold">View All</p>
-        </div>
+        </div> */}
       </div>
       <div>
         <Page />
-        <LoadMore />
       </div>
       <div>
         <Footer />
