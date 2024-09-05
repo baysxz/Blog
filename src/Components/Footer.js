@@ -1,11 +1,13 @@
 import { Facebook } from "@/Icons/Facebook";
+import { FooterLogo } from "@/Icons/FooterLogo";
+import { FoooterTextLogo } from "@/Icons/FooterTextLogo";
 import { Insta } from "@/Icons/Insta";
 import { Linkedin } from "@/Icons/Linkedin";
 import { Twitter } from "@/Icons/Twitter";
 
 export const Footer = () => {
   return (
-    <div className=" grid grid-cols-3">
+    <div className=" grid grid-cols-3 bg-gray-50 px-[352px]">
       <div className="w-[280px] h-[160px]">
         <h1 className="text-lg font-semibold pb-4">About</h1>
         <p className="text-base font-normal pb-6 ">
@@ -32,7 +34,10 @@ export const Footer = () => {
         <Insta />
         <Linkedin />
       </div>
-      <div></div>
+      <div>
+        <FooterLogo />
+        <FoooterTextLogo />
+      </div>
     </div>
   );
 };

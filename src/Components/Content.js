@@ -16,7 +16,9 @@ export const Content = (props) => {
           <div className="text-3xl text-slate-950 font-medium pt-4 pb-6">
             {title}
           </div>
-          <div className="text-base">{moment(date).format("ll")}</div>
+          <div className="text-base">
+            {moment(date).format("MMMM DD, YYYY")}
+          </div>
         </div>
       </div>
     </div>

@@ -1,4 +1,4 @@
-const FooterLogo = () => {
+export const FooterLogo = () => {
   return (
     <svg
       width="48"
