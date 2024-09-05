@@ -18,7 +18,7 @@ export const Footer = () => {
           <p>Phone : 880 123 456 789</p>
         </div>
       </div>
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col justify-center text-start gap-2">
         <ul>
           <li>Home</li>
           <li>Blog</li>
@@ -26,7 +26,7 @@ export const Footer = () => {
         </ul>
       </div>
 
-      <div className="flex flex-row">
+      <div className="flex gap-5">
         <Facebook />
         <Twitter />
         <Insta />

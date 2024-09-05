@@ -10,6 +10,7 @@ import { Back } from "@/Icons/Back";
 import { Forward } from "@/Icons/Forward";
 import { LoadMore } from "@/Components/LoadMore";
 import { Footer } from "@/Components/Footer";
+import { Trending } from "@/Components/Trending";
 const url = "https://dev.to/api/articles";
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
@@ -84,6 +85,7 @@ const Home = () => {
       </div>
       <div>
         <Footer />
+        {/* <Trending /> */}
       </div>
     </div>
   );
