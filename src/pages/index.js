@@ -36,7 +36,6 @@ const Home = () => {
   return (
     <div>
       <div className="container max-w-[1216px] mx-auto">
-        <Header />
         {blogs.map((blog, index) => {
           if (index === currentSlideIndex) {
             return (
@@ -71,9 +70,6 @@ const Home = () => {
         <div>
           <Page />
         </div>
-      </div>
-      <div className="contaier max-w-full ">
-        <Footer />
       </div>
     </div>
   );
