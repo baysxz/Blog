@@ -29,7 +29,7 @@ export const Page = () => {
     <div>
       <AllTags />
 
-      <div className=" grid grid-cols-3 mx-auto gap-5">
+      <div className=' grid grid-cols-3 mx-auto gap-5'>
         {blogdata.map((blog, index) => {
           if (index < addSlide) {
             return (
@@ -38,7 +38,7 @@ export const Page = () => {
                   <BlogCard
                     key={blog.id}
                     image={blog.cover_image}
-                    tag={blog.tag_list}
+                    tag={blog.tag_list[0]}
                     title={blog.title}
                     date={moment(blog.published_at)
                       .utc()

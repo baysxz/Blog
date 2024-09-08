@@ -35,7 +35,7 @@ const Home = () => {
 
   return (
     <div>
-      <div className="container max-w-[1216px] mx-auto">
+      <div className='container max-w-[1216px] mx-auto'>
         {blogs.map((blog, index) => {
           if (index === currentSlideIndex) {
             return (
@@ -48,7 +48,7 @@ const Home = () => {
             );
           }
         })}
-        <div className="flex flex-row justify-end gap-2 pb-[100px]">
+        <div className='flex flex-row justify-end gap-2 pb-[100px] pt-2'>
           <div onClick={handlePrevSlide}>
             <Back />
           </div>
@@ -56,15 +56,15 @@ const Home = () => {
             <Forward />
           </div>
         </div>
-        <div className="flex flex-col gap-[30px] pb-[100px]">
-          <div className="leading-3 text-2xl font-bold">
-            <h3 className="flex ">Trending</h3>
+        <div className='flex flex-col gap-[30px] pb-[100px]'>
+          <div className='leading-3 text-2xl font-bold'>
+            <h3 className='flex '>Trending</h3>
           </div>
-          <div className="flex flex-row gap-6 justify-center ">
+          <div className='flex flex-row gap-6 justify-center '>
             <TrendPosts />
           </div>
         </div>
-        <div className="flex flex-col font-bold text-2xl leading-8 gap-8 pb-8">
+        <div className='flex flex-col font-bold text-2xl leading-8 gap-8 pb-8'>
           <h3>All Blog Post</h3>
         </div>
         <div>
