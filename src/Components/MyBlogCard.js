@@ -1,5 +1,5 @@
-export const BlogCard = (props) => {
-  const { image, title, tag, username, date } = props;
+export const MyBlogCard = (props) => {
+  const { image, title, tag, profile, username, date } = props;
 
   return (
     <div className="px-4 py-4 border border-solid rounded w-fit">
@@ -11,6 +11,7 @@ export const BlogCard = (props) => {
           {tag}
         </p>
         <div>
+          <img className="h-9 w-9" src={profile} />
           <p>{username}</p>
         </div>
         <h2 className="text-2xl">{title}</h2>
