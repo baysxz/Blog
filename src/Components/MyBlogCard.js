@@ -6,17 +6,19 @@ export const MyBlogCard = (props) => {
       <div>
         <img className="h-60 w-90 pb-4" src={image} alt={title} />
       </div>
-      <h2 className="text-2xl">{title}</h2>
+      <p className="text-sm flex justify-center text-blue-500 bg-blue-100 w-[86px] h-[28px] text-wrap rounded-md">
+        {tag}
+      </p>
+      <h2 className="text-2xl pt-4">{title}</h2>
 
       <div>
-        <p className="text-sm flex justify-center text-blue-500 bg-blue-100 w-[86px] h-[28px] rounded-md">
-          {tag}
-        </p>
-        <div className="flex">
-          <img className="h-9 w-9 rounded-full" src={profile} />
-          <p>{username}</p>
+        <div className="flex gap-5 text-gray-400 text-base pt-5">
+          <div className="flex gap-3">
+            <img className="h-9 w-9 rounded-full" src={profile} />
+            <p>{username}</p>
+          </div>
+          <p>{date}</p>
         </div>
-        <p>{date}</p>
       </div>
     </div>
   );

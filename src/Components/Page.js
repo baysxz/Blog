@@ -11,6 +11,8 @@ const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 export const Page = () => {
   const [addSlide, setAddSlide] = useState(9);
+  // const [viewTag, setViewTag] = useState(0);
+
   const { data: blogdata = {}, error, isLoading } = useSWR(url, fetcher);
 
   if (isLoading) {
@@ -24,7 +26,7 @@ export const Page = () => {
   const clickLoadMore = () => {
     setAddSlide((more) => more + 9);
   };
-
+  // blogdata.filter((blog) => blog.tag_list === tag);
   return (
     <div>
       <AllTags />
