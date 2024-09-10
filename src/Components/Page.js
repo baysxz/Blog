@@ -11,9 +11,8 @@ const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 export const Page = () => {
   const [addSlide, setAddSlide] = useState(9);
-  // const [viewTag, setViewTag] = useState(0);
-
-  const { data: blogdata = {}, error, isLoading } = useSWR(url, fetcher);
+  const [selectedTag, setSelectedTag] = useState("");
+  const { data: blogdata, error, isLoading } = useSWR(url, fetcher);
 
   if (isLoading) {
     return null;
@@ -26,19 +25,26 @@ export const Page = () => {
   const clickLoadMore = () => {
     setAddSlide((more) => more + 9);
   };
-  // blogdata.filter((blog) => blog.tag_list === tag);
+
+  const filteredByTag = blogdata.filter((blog) => {
+    if (selectedTag === "") return true;
+
+    if (blog.tag_list.includes(selectedTag)) {
+      return true;
+    }
+  });
+
   return (
     <div>
-      <AllTags />
+      <AllTags selectedTag={selectedTag} handleSelectTag={setSelectedTag} />
 
       <div className="grid grid-cols-3 mx-auto gap-5">
-        {blogdata.map((blog, index) => {
+        {filteredByTag.map((blog, index) => {
           if (index < addSlide) {
             return (
-              <div>
+              <div key={blog.id}>
                 <Link href={`blog/${blog.id}`}>
                   <BlogCard
-                    key={blog.id}
                     image={blog.cover_image}
                     tag={blog.tag_list[0]}
                     title={blog.title}

@@ -40,6 +40,7 @@ const Home = () => {
           if (index === currentSlideIndex) {
             return (
               <Content
+                key={blog.id}
                 image={blog.cover_image}
                 title={blog.title}
                 date={blog.date}

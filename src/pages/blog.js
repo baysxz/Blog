@@ -23,25 +23,30 @@ const AllBLogPost = () => {
   };
 
   return (
-    <div className="grid grid-cols-3 mx-auto gap-5">
-      {blogPost.map((post, index) => {
-        if (index < addPost)
-          return (
-            <div className="h-[488px]">
-              <MyBlogCard
-                key={post.id}
-                image={post.cover_image}
-                title={post.title}
-                tag={post.tag_list[0]}
-                profile={post.user.profile_image}
-                username={post.user.name}
-                date={moment(post.published_at).format("MMMM DD, YYYY")}
-              />
-            </div>
-          );
-      })}
-      <div onClick={postLoadMore}>
-        <LoadMore />
+    <div className="container max-w-[1216px] mx-auto">
+      <div className="flex flex-col font-bold text-2xl leading-8 gap-8 pb-8">
+        <h3>All Blog Post</h3>
+      </div>
+      <div className="grid grid-cols-3 mx-auto gap-5">
+        {blogPost.map((post, index) => {
+          if (index < addPost)
+            return (
+              <div className="h-[488px]">
+                <MyBlogCard
+                  key={post.id}
+                  image={post.cover_image}
+                  title={post.title}
+                  tag={post.tag_list[0]}
+                  profile={post.user.profile_image}
+                  username={post.user.name}
+                  date={moment(post.published_at).format("MMMM DD, YYYY")}
+                />
+              </div>
+            );
+        })}
+        <div onClick={postLoadMore} className="flex w-full justify-center">
+          <LoadMore />
+        </div>
       </div>
     </div>
   );

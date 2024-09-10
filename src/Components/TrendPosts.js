@@ -22,7 +22,7 @@ export const TrendPosts = () => {
       {trends.map((trend, index) => {
         if (index < 4) {
           return (
-            <Link href={`blog/${trend.id}`}>
+            <Link key={trend.id} href={`blog/${trend.id}`}>
               <div
                 key={trend.id}
                 className="flex justify-center w-[289px] h-[320px]">
