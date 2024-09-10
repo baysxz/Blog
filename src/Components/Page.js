@@ -34,11 +34,13 @@ export const Page = () => {
     }
   });
 
+  const hasMoreToLoad = filteredByTag.length > addSlide;
+
   return (
     <div>
       <AllTags selectedTag={selectedTag} handleSelectTag={setSelectedTag} />
 
-      <div className="grid grid-cols-3 mx-auto gap-5">
+      <div className='grid grid-cols-3 mx-auto gap-5'>
         {filteredByTag.map((blog, index) => {
           if (index < addSlide) {
             return (
@@ -58,9 +60,11 @@ export const Page = () => {
           }
         })}
       </div>
-      <div onClick={clickLoadMore}>
-        <LoadMore />
-      </div>
+      {hasMoreToLoad && (
+        <div onClick={clickLoadMore}>
+          <LoadMore />
+        </div>
+      )}
     </div>
   );
 };

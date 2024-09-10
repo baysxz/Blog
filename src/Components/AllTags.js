@@ -7,7 +7,7 @@ const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 export const AllTags = (props) => {
   const { selectedTag, handleSelectTag } = props;
-  const [viewAll, setViewAll] = useState(5);
+  const [viewAll, setViewAll] = useState(false);
 
   const { data: tags, error, isLoading } = useSWR(url, fetcher);
 
@@ -19,26 +19,26 @@ export const AllTags = (props) => {
     return <p>...oh sorry error</p>;
   }
 
-  const clickAddTags = () => {
-    setViewAll(tags.length);
+  const toggleViewAll = () => {
+    setViewAll((prev) => !prev);
   };
 
   return (
-    <div className='flex justify-between py-8'>
-      <div className='flex  gap-5'>
+    <div className='flex justify-between py-8 cursor-pointer'>
+      <div className='flex gap-5'>
         <p className='text-yellow-500' onClick={() => handleSelectTag("")}>
           All
         </p>
+        {tags.slice(0, viewAll ? tags.length : 5).map((tag) => (
+          <div key={tag.id} onClick={() => handleSelectTag(tag.name)}>
+            {tag.name}
+          </div>
+        ))}
       </div>
-      {tags.map((tag, index) => {
-        if (index < viewAll)
-          return (
-            <div key={tag.id} onClick={() => handleSelectTag(tag.name)}>
-              {tag.name}
-            </div>
-          );
-      })}
-      <p onClick={(clickAddTags, () => handleSelectTag(""))}>View All</p>
+
+      <p onClick={toggleViewAll} className='cursor-pointer'>
+        {viewAll ? "Show Less" : "View All"}
+      </p>
     </div>
   );
 };
