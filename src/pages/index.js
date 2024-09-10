@@ -34,44 +34,42 @@ const Home = () => {
   };
 
   return (
-    <div>
-      <div className="container max-w-[1216px] mx-auto">
-        {blogs.map((blog, index) => {
-          if (index === currentSlideIndex) {
-            return (
-              <Content
-                key={blog.id}
-                image={blog.cover_image}
-                title={blog.title}
-                date={blog.date}
-                tags={blog.tag_list}
-                id={blog.id}
-              />
-            );
-          }
-        })}
-        <div className="flex flex-row justify-end gap-2 pb-[100px] pt-2">
-          <div onClick={handlePrevSlide}>
-            <Back />
-          </div>
-          <div onClick={handleNextSlide}>
-            <Forward />
-          </div>
+    <div className='container max-w-[1216px] mx-auto sm:px-6 md:px-8 lg:px-12 '>
+      {blogs.map((blog, index) => {
+        if (index === currentSlideIndex) {
+          return (
+            <Content
+              key={blog.id}
+              image={blog.cover_image}
+              title={blog.title}
+              date={blog.date}
+              tags={blog.tag_list}
+              id={blog.id}
+            />
+          );
+        }
+      })}
+      <div className='flex flex-row justify-end gap-2 pb-[100px] pt-2'>
+        <div onClick={handlePrevSlide}>
+          <Back />
         </div>
-        <div className="flex flex-col gap-[30px] pb-[100px]">
-          <div className="leading-3 text-2xl font-bold">
-            <h3 className="flex ">Trending</h3>
-          </div>
-          <div className="flex flex-row gap-6 justify-center ">
-            <TrendPosts />
-          </div>
+        <div onClick={handleNextSlide}>
+          <Forward />
         </div>
-        <div className="flex flex-col font-bold text-2xl leading-8 gap-8 pb-8">
-          <h3>All Blog Post</h3>
+      </div>
+      <div className='flex flex-col gap-[30px] pb-[100px]'>
+        <div className='leading-3 text-2xl font-bold'>
+          <h3 className='flex '>Trending</h3>
         </div>
-        <div>
-          <Page />
+        <div className='flex flex-row gap-6 justify-center '>
+          <TrendPosts />
         </div>
+      </div>
+      <div className='flex flex-col font-bold text-2xl leading-8 gap-8 pb-8'>
+        <h3>All Blog Post</h3>
+      </div>
+      <div>
+        <Page />
       </div>
     </div>
   );

@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const Contact = () => {
   return (
     <div className='w-full flex flex-col gap-[69px] max-w-screen-xl mx-auto'>
@@ -44,9 +46,11 @@ const Contact = () => {
             placeholder='Write a message'
             className='pb-24 font-normal text-base text-gray-500 px-5 pt-[14px] bg-white rounded-md'
           />
-          <button className='py-2.5 px-4 font-medium text-sm bg-blue-600 rounded-md text-white w-fit'>
-            Send Message
-          </button>
+          <Link href='/error'>
+            <button className='py-2.5 px-4 font-medium text-sm bg-blue-600 rounded-md text-white w-fit'>
+              Send Message
+            </button>
+          </Link>
         </div>
       </div>
     </div>

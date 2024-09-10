@@ -4,10 +4,10 @@ import { Footer } from "./Footer";
 const Layout = (props) => {
   const { children } = props;
   return (
-    <div className=" mx-auto">
+    <div className='container max-w-[1216px] mx-auto sm:p-4'>
       <Header />
       {children}
-      <div className=" bg-gray-100">
+      <div className=' bg-gray-100'>
         <Footer />
       </div>
     </div>
