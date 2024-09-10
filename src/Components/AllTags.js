@@ -24,20 +24,21 @@ export const AllTags = (props) => {
   };
 
   return (
-    <div className="flex justify-between py-8">
-      <div className="flex  gap-5">
-        <p className="text-yellow-500" onClick={() => handleSelectTag("")}>
+    <div className='flex justify-between py-8'>
+      <div className='flex  gap-5'>
+        <p className='text-yellow-500' onClick={() => handleSelectTag("")}>
           All
         </p>
       </div>
-      {tags.map((tag) => {
-        return (
-          <div key={tag.id} onClick={() => handleSelectTag(tag.name)}>
-            {tag.name}
-          </div>
-        );
+      {tags.map((tag, index) => {
+        if (index < viewAll)
+          return (
+            <div key={tag.id} onClick={() => handleSelectTag(tag.name)}>
+              {tag.name}
+            </div>
+          );
       })}
-      <p onClick={clickAddTags}>View All</p>
+      <p onClick={(clickAddTags, () => handleSelectTag(""))}>View All</p>
     </div>
   );
 };
