@@ -54,7 +54,7 @@ export const Footer = () => {
           </Link>
         </div>
       </div>
-      <div className="flex justify-between border-t border-gray-500">
+      <div className="flex justify-between border-t border-[#E8E8EA]">
         <div className="flex py-8 gap-4 ">
           <Link href="/">
             <FooterLogo />
@@ -68,10 +68,12 @@ export const Footer = () => {
           </div>
         </div>
         <div>
-          <ul className="flex flex-row gap-8 py-8">
-            <li>Terms of Use</li>
-            <li>Privacy Policy</li>
-            <li>Cookie Policy</li>
+          <ul className="flex flex-row py-8">
+            <li className="px-4">Terms of Use</li>
+            <li className="px-4 border-x-2 border-[#E8E8EA];">
+              Privacy Policy
+            </li>
+            <li className="px-4">Cookie Policy</li>
           </ul>
         </div>
       </div>

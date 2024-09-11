@@ -19,7 +19,7 @@ const Home = () => {
 
   if (isLoading) {
     return (
-      <span className=" justify-center loading loading-spinner loading-lg"></span>
+      <span className="justify-center content-center loading loading-spinner loading-lg"></span>
     );
   }
 
