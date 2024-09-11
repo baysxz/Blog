@@ -2,15 +2,14 @@ import { Facebook } from "@/Icons/Facebook";
 import { FooterLogo } from "@/Icons/FooterLogo";
 import { Insta } from "@/Icons/Insta";
 import { Linkedin } from "@/Icons/Linkedin";
-import { MetaBlogLogo } from "@/Icons/MetaBlogLogo";
 import { Twitter } from "@/Icons/Twitter";
 import Link from "next/link";
 
 export const Footer = () => {
   return (
     <div className=" mx-auto px-4 pt-16">
-      <div className=" grid grid-cols-3 gap-6 bg-gray-100 pb-[25px]">
-        <div className="w-[280px] ">
+      <div className=" lg:grid lg:grid-cols-3 md:grid md:grid-cols-2 gap-6 bg-gray-100 pb-[25px] ">
+        <div className="w-[280px] hidden md:block ">
           <h1 className="text-lg font-semibold pb-4">About</h1>
           <p className="text-base font-normal pb-6 ">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -26,8 +25,8 @@ export const Footer = () => {
             <p> 880 123 456 789</p>
           </div>
         </div>
-        <div className="flex flex-col justify-center text-start gap-2 px-[110px] cursor-pointer">
-          <ul>
+        <div className="flex flex-col content-center justify-center text-center sm:text-start gap-2 px-[110px] cursor-pointer">
+          <ul className="flex flex-col justify-center content-center place-content-center">
             <Link href="/">
               <li>Home</li>
             </Link>
@@ -39,7 +38,7 @@ export const Footer = () => {
             </Link>
           </ul>
         </div>
-        <div className="flex gap-5 cursor-pointer">
+        <div className="flex gap-5 justify-center sm:gap-[27px] md:w-full md:justify-center cursor-pointer pt-[30px]">
           <Link href="https://www.facebook.com/pinecone.academy.mongolia">
             <Facebook />
           </Link>
@@ -54,7 +53,7 @@ export const Footer = () => {
           </Link>
         </div>
       </div>
-      <div className="flex justify-between border-t border-[#E8E8EA]">
+      <div className="flex justify-center sm:justify-between border-t border-[#E8E8EA]">
         <div className="flex py-8 gap-4 ">
           <Link href="/">
             <FooterLogo />
@@ -67,7 +66,7 @@ export const Footer = () => {
             <p>© All Rights Reserved.</p>
           </div>
         </div>
-        <div>
+        <div className="hidden sm:block">
           <ul className="flex flex-row py-8">
             <li className="px-4">Terms of Use</li>
             <li className="px-4 border-x-2 border-[#E8E8EA];">

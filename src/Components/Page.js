@@ -37,10 +37,10 @@ export const Page = () => {
   const hasMoreToLoad = filteredByTag.length > addSlide;
 
   return (
-    <div>
+    <div className="px-8 ">
       <AllTags selectedTag={selectedTag} handleSelectTag={setSelectedTag} />
 
-      <div className='lg:grid lg:grid-cols-3 md:grid md:grid-cols-2 mx-auto gap-5 mb-[100px]'>
+      <div className="lg:grid lg:grid-cols-3 md:grid md:grid-cols-2 flex flex-col justify-center items-center mx-auto gap-5 mb-[100px]">
         {filteredByTag.map((blog, index) => {
           if (index < addSlide) {
             return (

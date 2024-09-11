@@ -24,14 +24,14 @@ export const AllTags = (props) => {
   };
 
   return (
-    <div className='flex flex-wrap lg:justify-between py-8 cursor-pointer'>
-      <div className='flex flex-wrap gap-5'>
-        <p className='text-yellow-500' onClick={() => handleSelectTag("")}>
+    <div className="flex flex-wrap lg:justify-between md:justify-between py-8  cursor-pointer">
+      <div className="flex flex-wrap gap-5">
+        <p className="text-yellow-500" onClick={() => handleSelectTag("")}>
           All
         </p>
         {tags.slice(0, viewAll ? tags.length : 5).map((tag) => (
           <div
-            className='fl'
+            className="fl"
             key={tag.id}
             onClick={() => handleSelectTag(tag.name)}>
             {tag.name}
@@ -39,7 +39,7 @@ export const AllTags = (props) => {
         ))}
       </div>
 
-      <p onClick={toggleViewAll} className='cursor-pointer'>
+      <p onClick={toggleViewAll} className="cursor-pointer pt-5 lg:pt-0 ">
         {viewAll ? "Show Less" : "View All"}
       </p>
     </div>

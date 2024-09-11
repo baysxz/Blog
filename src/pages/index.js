@@ -24,8 +24,8 @@ const Home = () => {
 
   if (isLoading) {
     return (
-      <div className='h-full w-full flex justify-center content-center'>
-        <span className='justify-center content-center loading loading-spinner loading-lg'></span>
+      <div className="h-full w-full flex justify-center content-center">
+        <span className="justify-center content-center loading loading-spinner loading-lg"></span>
       </div>
     );
   }
@@ -43,7 +43,7 @@ const Home = () => {
   };
 
   return (
-    <div className='container lg:max-w-[1216px] lg: mx-auto '>
+    <div className="container lg:max-w-[1216px] lg: mx-auto ">
       {blogs.map((blog, index) => {
         if (index === currentSlideIndex) {
           return (
@@ -58,8 +58,8 @@ const Home = () => {
           );
         }
       })}
-      <div className='hidden sm:block'>
-        <div className='flex flex-row justify-end gap-2 pb-[100px] pt-2'>
+      <div className="hidden sm:block">
+        <div className="flex flex-row justify-end gap-2 pb-[100px] pt-2">
           <div onClick={handlePrevSlide}>
             <Back />
           </div>
@@ -69,15 +69,15 @@ const Home = () => {
         </div>
       </div>
 
-      <div className='flex flex-col gap-[30px] pb-[100px]'>
-        <div className='leading-3 text-2xl font-bold'>
-          <h3 className='flex '>Trending</h3>
+      <div className="flex flex-col py-[30px] sm:pt-0 sm:gap-[30px] sm:pb-[100px] ">
+        <div className="leading-3 text-2xl font-bold">
+          <h3 className="flex pb-[30px] sm:pb-0 ">Trending</h3>
         </div>
-        <div className='flex flex-row gap-6 justify-center '>
+        <div className="flex flex-row gap-6 justify-center ">
           <TrendPosts />
         </div>
       </div>
-      <div className='flex flex-col font-bold text-2xl leading-8 gap-8 pb-8'>
+      <div className="flex flex-col font-bold text-2xl leading-8 ">
         <h3>All Blog Post</h3>
       </div>
       <div>
