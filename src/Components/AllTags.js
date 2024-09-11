@@ -24,13 +24,16 @@ export const AllTags = (props) => {
   };
 
   return (
-    <div className='flex justify-between py-8 cursor-pointer'>
-      <div className='flex gap-5'>
+    <div className='flex flex-wrap lg:justify-between py-8 cursor-pointer'>
+      <div className='flex flex-wrap gap-5'>
         <p className='text-yellow-500' onClick={() => handleSelectTag("")}>
           All
         </p>
         {tags.slice(0, viewAll ? tags.length : 5).map((tag) => (
-          <div key={tag.id} onClick={() => handleSelectTag(tag.name)}>
+          <div
+            className='fl'
+            key={tag.id}
+            onClick={() => handleSelectTag(tag.name)}>
             {tag.name}
           </div>
         ))}

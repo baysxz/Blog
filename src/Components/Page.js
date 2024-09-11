@@ -40,7 +40,7 @@ export const Page = () => {
     <div>
       <AllTags selectedTag={selectedTag} handleSelectTag={setSelectedTag} />
 
-      <div className='grid grid-cols-3 mx-auto gap-5 mb-[100px]'>
+      <div className='lg:grid lg:grid-cols-3 md:grid md:grid-cols-2 mx-auto gap-5 mb-[100px]'>
         {filteredByTag.map((blog, index) => {
           if (index < addSlide) {
             return (

@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export const Error = () => {
+export default function Custom404() {
   return (
     <div className='flex py-[100px] justify-center content-center'>
       <p className='text-7xl justify-center content-center pr-[60px] border-r border-gray-400'>
@@ -21,6 +21,4 @@ export const Error = () => {
       </div>
     </div>
   );
-};
-
-export default Error;
+}
