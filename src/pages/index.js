@@ -10,11 +10,16 @@ import { Forward } from "@/Icons/Forward";
 import { LoadMore } from "@/Components/LoadMore";
 import { Footer } from "@/Components/Footer";
 const url = "https://dev.to/api/articles";
-
+import { DataContext } from "@/Components/DataContext";
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 const Home = () => {
+  // const { blogs } = useContext(DataContext);
+
+  // console.log(blogs);
+
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+
   const { data: blogs, error, isLoading } = useSWR(url, fetcher);
 
   if (isLoading) {
