@@ -39,7 +39,7 @@ const AllBLogPost = () => {
                     tag={post.tag_list[0]}
                     profile={post.user.profile_image}
                     username={post.user.name}
-                    date={moment(post.published_at).format("MMMM DD, YYYY")}
+                    date={moment(post.published_at).format("LL")}
                   />
                 </Link>
               </div>

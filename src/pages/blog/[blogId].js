@@ -30,7 +30,9 @@ const Page = () => {
           <div className="flex flex-row gap-6 text-sm text-gray-600">
             <p>{blogDetail.user.name}</p>
             <p>
-              {moment(blogDetail.readable_publish_date).format("MMMM DD, YYYY")}
+              {moment(blogDetail.readable_publish_date).ISO_8601.format(
+                "MMMM DD, YYYY"
+              )}
             </p>
           </div>
         </div>
