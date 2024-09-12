@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export const Footer = () => {
   return (
-    <div className=" mx-auto px-4 pt-16">
+    <div className="container lg:max-w-[1216px] mx-auto px-4 pt-16">
       <div className=" lg:grid lg:grid-cols-3 md:grid md:grid-cols-2 gap-6 bg-gray-100 pb-[25px] ">
         <div className="w-[280px] hidden md:block ">
           <h1 className="text-lg font-semibold pb-4">About</h1>
