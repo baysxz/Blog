@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Logo } from "../Icons/Logo";
 import { Search } from "@/Icons/Search";
-import { Menu } from "@/Icons/Menu";
+import { Menu } from "./Menu";
 
 export const Header = () => {
   return (

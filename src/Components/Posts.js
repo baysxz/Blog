@@ -40,11 +40,11 @@ export const Posts = () => {
     <div className="px-8 ">
       <AllTags selectedTag={selectedTag} handleSelectTag={setSelectedTag} />
 
-      <div className="lg:grid lg:grid-cols-3 md:grid md:grid-cols-2 flex flex-col justify-center items-center mx-auto gap-5 mb-[100px]">
+      <div className="lg:grid lg:grid-cols-3 md:grid md:grid-cols-2 grid-cols-1 mx-auto mb-[100px] ">
         {filteredByTag.map((blog, index) => {
           if (index < addSlide) {
             return (
-              <div key={blog.id}>
+              <div key={blog.id} className="m-2">
                 <Link href={`blog/${blog.id}`}>
                   <BlogCard
                     image={blog.cover_image}
