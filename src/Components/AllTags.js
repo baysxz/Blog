@@ -26,17 +26,23 @@ export const AllTags = (props) => {
   return (
     <div className="flex flex-wrap lg:justify-between md:justify-between py-8  cursor-pointer">
       <div className="flex flex-wrap gap-5">
-        <p className="text-yellow-500" onClick={() => handleSelectTag("")}>
+        <p
+          className={selectedTag === "" ? "text-yellow-500" : "text-black"}
+          onClick={() => handleSelectTag("")}>
           All
         </p>
-        {tags.slice(0, viewAll ? tags.length : 5).map((tag) => (
-          <div
-            className="fl"
-            key={tag.id}
-            onClick={() => handleSelectTag(tag.name)}>
-            {tag.name}
-          </div>
-        ))}
+        {tags.slice(0, viewAll ? tags.length : 5).map((tag) => {
+          return (
+            <p
+              className={`${
+                selectedTag === tag.name ? "text-yellow-500" : "text-black"
+              }`}
+              key={tag.id}
+              onClick={() => handleSelectTag(tag.name)}>
+              {tag.name}
+            </p>
+          );
+        })}
       </div>
 
       <p onClick={toggleViewAll} className="cursor-pointer pt-5 lg:pt-0 ">

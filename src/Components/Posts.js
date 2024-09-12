@@ -9,7 +9,7 @@ import { BlogCard } from "./BlogCard";
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
-export const Page = () => {
+export const Posts = () => {
   const [addSlide, setAddSlide] = useState(9);
   const [selectedTag, setSelectedTag] = useState("");
   const { data: blogdata, error, isLoading } = useSWR(url, fetcher);

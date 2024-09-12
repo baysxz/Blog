@@ -1,23 +1,15 @@
-import { Header } from "@/Components/Header";
-import { Page } from "@/Components/Page";
 import { Content } from "@/Components/Content";
 import { TrendPosts } from "@/Components/TrendPosts";
 import useSWR from "swr";
-import moment from "moment";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { Back } from "@/Icons/Back";
 import { Forward } from "@/Icons/Forward";
-import { LoadMore } from "@/Components/LoadMore";
-import { Footer } from "@/Components/Footer";
+import { Posts } from "@/Components/Posts";
+
 const url = "https://dev.to/api/articles";
-import { DataContext } from "@/Components/DataContext";
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 const Home = () => {
-  // const { blogs } = useContext(DataContext);
-
-  // console.log(blogs);
-
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
 
   const { data: blogs, error, isLoading } = useSWR(url, fetcher);
@@ -81,7 +73,7 @@ const Home = () => {
         <h3>All Blog Post</h3>
       </div>
       <div>
-        <Page />
+        <Posts />
       </div>
     </div>
   );
