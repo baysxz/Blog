@@ -30,7 +30,7 @@ const AllBLogPost = () => {
         {blogPost.map((post, index) => {
           if (index < addPost)
             return (
-              <div className="h-[488px]">
+              <div className="h-[488px]" key={post.id}>
                 <Link href={`blog/${post.id}`}>
                   <MyBlogCard
                     key={post.id}
