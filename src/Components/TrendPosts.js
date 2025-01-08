@@ -28,9 +28,10 @@ export const TrendPosts = () => {
                 backgroundImage: `url(${trend.cover_image})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
-              }}>
+              }}
+            >
               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-50"></div>
-              <p className="text-sm flex text-white bg-[#4B6BFB] justify-center place-content-center w-[86px] h-[28px] rounded-md z-20 px-[10px] py-1">
+              <p className="text-sm flex text-white bg-[#4B6BFB] justify-center items-center w-[86px] h-[28px] rounded-md z-20">
                 {trend.tag_list[0]}
               </p>
               <p className="text-lg leading-7 w-[230px] text-white font-semibold z-10">
